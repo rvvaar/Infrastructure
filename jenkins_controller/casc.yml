@@ -7,7 +7,7 @@ jenkins:
           name: "Panda"
           password: "panda"
   authorizationStrategy:
-    matrix:
+    globalMatrix:
       permissions:
         - "Overall/Administer:panda"
   numExecutors: 0
