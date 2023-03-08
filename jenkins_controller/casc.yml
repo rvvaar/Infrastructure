@@ -11,3 +11,15 @@ jenkins:
       permissions:
        - "Overall/Administer:panda"
   numExecutors: 0
+credentials:
+  system:
+    domainCredentials:
+      credentials:
+        usernamePassword:
+          id: "artifactory"
+          name: "admin"
+          password: "password"
+          scope: "GLOBAL"
+
+
+      
