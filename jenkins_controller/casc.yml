@@ -1,25 +1,74 @@
 jenkins:
   securityRealm:
     local:
-      allowsSignup: false
       users:
-      - id: "panda"
-        name: "Panda"
-        password: "panda"
-  AuthorizationStrategy:
+        - id: "panda"
+          password: "panda"
+  authorizationStrategy:
     globalMatrix:
       permissions:
-       - "Overall/Administer:panda"
+        - "Overall/Administer:panda"
   numExecutors: 0
 credentials:
   system:
     domainCredentials:
-      credentials:
-        usernamePassword:
+    - credentials:
+      - usernamePassword:
           id: "artifactory"
-          name: "admin"
+          username: "admin"
           password: "password"
-          scope: "GLOBAL"
+          scope: GLOBAL
+      - basicSSHUserPrivateKey:
+          id: "jenkins_agent"
+          username: "jenkins"
+          scope: GLOBAL
+          privateKeySource:
+            directEntry:
+              privateKey:
+                -----BEGIN OPENSSH PRIVATE KEY-----
+                b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+                NhAAAAAwEAAQAAAYEAw4/LFsbXbteCFWS95/4DISL+BUaE8suUDfshDuTiudaoLurr2t0w
+                WrQWiynwnxjL8aDell2s3DBMjebqCWeHSUP1qoGgTxeS58169d9/iHjx3g5RUHppf91jsf
+                dIIOBG9nxB1tTSA8RnDNCWC2hjF3G9X4/jpWMeNeqHYE2L/JaB8MaSdeKFAadQqRoL47of
+                uZ6MgpEXmBuLiEBir63JHabJDQKljQL++iOJjIeNQsb5VA7AkyBHWAJrR3k/YNNJ3qYpN+
+                gcoEtr2y9uC8/Q5HhPGIp1cJLCVcvEkkA3oouAqxiiGxAVV/5HeGjKahUQIbkob9DcihQ4
+                z/BDMZQmwdffiXwMAnAvVPlGWGW1RuQB0NONPV2ZsXqrQHBlY24EsQijchwptYsL1+OWHq
+                RVANoZnqdbmagHK467PTXSkubKRKAHSmr2B01f9ajWy6uWzhD9IZzhfoNm1hfyGgqAB4oy
+                y2ondY67vT1FatopghtR5InzZcrkNfsaq9wIYfqpAAAFiBkzeh4ZM3oeAAAAB3NzaC1yc2
+                EAAAGBAMOPyxbG127XghVkvef+AyEi/gVGhPLLlA37IQ7k4rnWqC7q69rdMFq0Fosp8J8Y
+                y/Gg3pZdrNwwTI3m6glnh0lD9aqBoE8XkufNevXff4h48d4OUVB6aX/dY7H3SCDgRvZ8Qd
+                bU0gPEZwzQlgtoYxdxvV+P46VjHjXqh2BNi/yWgfDGknXihQGnUKkaC+O6H7mejIKRF5gb
+                i4hAYq+tyR2myQ0CpY0C/vojiYyHjULG+VQOwJMgR1gCa0d5P2DTSd6mKTfoHKBLa9svbg
+                vP0OR4TxiKdXCSwlXLxJJAN6KLgKsYohsQFVf+R3hoymoVECG5KG/Q3IoUOM/wQzGUJsHX
+                34l8DAJwL1T5RlhltUbkAdDTjT1dmbF6q0BwZWNuBLEIo3IcKbWLC9fjlh6kVQDaGZ6nW5
+                moByuOuz010pLmykSgB0pq9gdNX/Wo1surls4Q/SGc4X6DZtYX8hoKgAeKMstqJ3WOu709
+                RWraKYIbUeSJ82XK5DX7GqvcCGH6qQAAAAMBAAEAAAGAduThMAPLzlOvfpo06up/tJG1pj
+                dtdL9YT/ex7YAyZ5GdxoiExBdd4odCfXEOHWvR8iE/smNZSLUElfEhsH4EvgJXRUZx1CQc
+                6FkAvKMYwjvlsH876JXDtj0+81/HtlUkT47T6GyTEj9B94SI9H6OYB6CZ6rvWAmewGDJ1T
+                7QMMzAS0YunQUOoCa831I6kEUELLG781WK5qs4danPVcduUlyoNwS46bY8lo8sfQecVlDq
+                HLSrV8d0GIm/90A7y/4oBsJP8tr7BFDu9Y+DCVV7xSdzlKPTPwH8PWkG9MUQem46pCCAEE
+                XPtseNDziD8CktNcNvsbTYuljT0GGLUEuNCk46ejWBCclA9fCJF/C+QxFDeJ2+3mzn9fQW
+                3qcPkrFB+3p2iXmHwyKM+oqLgIqnJv+Yus95vzc65SV6p4Zd5QDLhtdxWV6eSHN2Q9EFTQ
+                eXQ6ya2/IL4X6KRhhiJeWEq0ifSvV5m6BbUZqGCWeMMdTpb/0KENreN+chj/ioMumRAAAA
+                wHyXOCCt46+N0zwZZnuztlITDxVO9cqxvlNIbjHX9Jgb0H9+kZSTKxVhsMvQRjG43y+FR2
+                Tvgigijgmg/TJEfuZJAEMyjnQtOjUbNkfNuNOwuErdm1osz9Iw0kET4mugtBoD77IlxQWB
+                bofUJPTt+MUItGt6Z4VbivFRiLVwBqppf/2tJ2a0mrnTgH5YntCj7EzyAoCs9geiBxkLKk
+                Azvbca15/SLJKMcfyuRdcPMGKb+7ZrGkocu308/cHK/YBE7AAAAMEA50Ei8nErNEujN8hE
+                0pf7NuFUy9xM7dEpDzPkWxnsHuowAz5kHJPn5SXQhMVtaQP+HRsAIUpE0qn9BD43g+xmoY
+                ib+PBcR3G4TaoJ+28TJSViHgAuVbww2yUKk7H+PEs4miMvt3hw8beGtQHrGlQaP8NOZ5zn
+                l1ABbFwXRfPw5gvbYLz0Lg//G8yHOi+W8r0oUClgDSgQHxtyK6JG78T6IV+1/yE/aH64iv
+                FNMr3hho7ldceS9CPH9YvkkGN8phPTAAAAwQDYfOiHV1hu05WBJ4X+88yQMZXp8Z9A2lpW
+                +1vsv05ewjRYNofM2ItT6D7htweFVq755YsXUXRiQpcGE+NrgprmfSJBGzoheMfIqx7OCF
+                oytbcZcFnd0ICxw0Jwq3+8mmbZ++AbekJiqh3DTi/eAZa5ioylKj2iyLrnxqzTc0tBfPGr
+                C3LQLhga240Mvgqvpqy3f/LCzQWs9C18KA1nB3DEsisMWbyIkLNIJ+OH7NqeiEPLeEUPoE
+                exZ2ouhrSgNhMAAAANcGFuZGFAdmFncmFudAECAwQFBg==
+                -----END OPENSSH PRIVATE KEY-----
+
+
+
+          
+
+
 
 
       
