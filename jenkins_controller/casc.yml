@@ -3,11 +3,11 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: "panda"
-          name: "Panda"
-          password: "panda"
-  authorizationStrategy:
+      - id: "panda"
+        name: "Panda"
+        password: "panda"
+  AuthorizationStrategy:
     globalMatrix:
       permissions:
-        - "Overall/Administer:panda"
+       - "Overall/Administer:panda"
   numExecutors: 0
