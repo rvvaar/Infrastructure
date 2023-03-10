@@ -78,6 +78,8 @@ unclassified:
   locale:
     systemLocale: en
     ignoreAcceptLanguage: true
+  location:
+    url: "http://192.168.44.44:8080/"
   
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
