@@ -32,10 +32,10 @@ credentials:
           username: "admin"
           password: "password"
           scope: GLOBAL
+
       - basicSSHUserPrivateKey:
+          description: "Konto zrobione custom"
           id: "jenkins_agent"
-          username: "jenkins"
-          scope: GLOBAL
           privateKeySource:
             directEntry:
               privateKey:
@@ -77,7 +77,9 @@ credentials:
                 uQ7DntUJ+IEjJ08dYB2y2rSAps69S8NvJKdzLAcZRDWOzQGR86R3ChHCSi/DvS7v89gdCK
                 FY0/lk0tgD04NzAAAADXBhbmRhQHZhZ3JhbnQBAgMEBQ==
                 -----END OPENSSH PRIVATE KEY-----
-
+          scope: GLOBAL
+          username: "jenkins"
+          
 tool:
   sonarRunnerInstallation:
     installations:
