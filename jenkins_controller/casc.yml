@@ -38,7 +38,7 @@ credentials:
           id: "jenkins_agent"
           privateKeySource:
             directEntry:
-              privateKey:
+              privateKey: |
                 -----BEGIN OPENSSH PRIVATE KEY-----
                 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
                 NhAAAAAwEAAQAAAYEA9BVfW5akKLoyrkxjY2EX19j4zzv1i5A54LCx27R+Fkk7pDeUQ2vb
