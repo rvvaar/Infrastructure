@@ -31,7 +31,7 @@ services:
 
   jenkins_agent:
     depends_on:
-        -jenkins
+        - jenkins
     container_name: jenkins_agent
     build: "./jenkins_agent"
     ports:
@@ -44,7 +44,7 @@ services:
   
   sonarqube:
     depends_on:
-      -jenkins
+      - jenkins
     container_name: sonarqube
     image: sonarqube:9.2.4-community
     ports:
