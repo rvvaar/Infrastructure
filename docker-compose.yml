@@ -37,7 +37,7 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - "./var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock"
     restart: always
     environment:
       JENKINS_AGENT_SSH_PUBKEY: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDkttmpKDrYOWKKCLLhztIpBVMlAmTj48PsxzPEg9kuANM+JC64e0waDwU8EnA7QYEmocPNVxrfX7WxNZA4B3eur3DbTDfPfo2gggZBzbAqdEDUI7zHh4VBKgTtmcJl9JD9U5z5ev6ovpuH3Sp8acGl4Ar/jCtoMje5BfzJOk74cXFbvQpkdW5EJpuipiZhZHhxLZGRxemkg8ok2EjN5Ys6XzwnMaYp0br9sJDtOqJi4+0AqxrxbSWEjb54eoBx6heDtS10O714stxF8nU1BgQ0scdYACt7+no5wCwBHYPIiYivv2yEgT1DwbAspX9GSQzuyoV+Qgy0MEOTz88ABHfJj/+SCLO+O8bkX1B7fyPX+FjN9K9NHE72yQxSh0taD55nsqI1SCW64qhJVlz+HYVHKE1WGDMUMrhRIIIFuxw1Nqd9RtVezJ+5Q5Rd/Okj2MS21mWndZL+fWCGlpcPGI1zDOXntHZkgOeQbre8DfQuAZuGd5EeAZm2Ac1sFS8QLcE="
