@@ -113,7 +113,8 @@ unclassified:
 
   terraform:
     installations:
-    - properties:
+    - name: "Terraform"
+      properties:
       - installSource:
           installers:
           - terraformInstaller:
