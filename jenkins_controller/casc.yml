@@ -111,7 +111,13 @@ unclassified:
         skipScmCause: false
         skipUpstreamCause: false
 
-          
+  terraform:
+    installations:
+    - properties:
+      - installSource:
+          installers:
+          - terraformInstaller:
+              id: "1.4.4-linux-amd64"
 
 
 
